@@ -7,7 +7,9 @@
 
 /* Global Font */
 body {
-  font-family: "Press Start 2P", cursive;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-style: normal;
+  font-weight: 400;
   background-color: #1f1b3f;
   color: #ffffff;
 }
@@ -16,14 +18,31 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 50px;
 }
 
-/* Header Styling */
+/* Header with Background Image */
 header {
   background-color: #2b244f;
-  padding: 20px 0;
+  padding: 120px 0;
   text-align: center;
+  background: url("image/pixel2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Optional: Add overlay effect */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(43, 36, 79, 0.7); /* Overlay with opacity */
+  z-index: -1; /* Sends the overlay behind the content */
 }
 
 header h1 {
@@ -32,25 +51,53 @@ header h1 {
   letter-spacing: 2px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+/* Navbar Container */
+.navbar-container {
+  background-color: rgba(175, 2, 255, 0.7);
+  padding: 15px 0; /* Space around the navbar */
+  position: sticky; /* Navbar stays at the top when scrolling */
+  top: 0;
+  z-index: 999; /* Keeps the navbar above other elements */
 }
 
-nav ul li {
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.navbar ul li {
   margin: 0 15px;
 }
 
-nav ul li a {
-  color: #ff0080;
+.navbar ul li a {
   text-decoration: none;
-  font-size: 1.2em;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  transition: all 0.5s ease;
+  position: relative;
 }
 
-nav ul li a:hover {
-  color: #ff4da6;
+/* Hover and Glow Effect */
+.navbar ul li a:hover {
+  color: #ff0080;
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.7), 0 0 25px rgba(255, 0, 128, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Glow effect on focus or active state */
+.navbar ul li a:focus, .navbar ul li a.active {
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.7), 0 0 25px rgba(255, 0, 128, 0.4);
+  border-radius: 5px;
 }
 
 /* Poster Section */
@@ -60,7 +107,7 @@ nav ul li a:hover {
 }
 
 #poster img {
-  max-width: 100%;
+  max-width: 25%;
   height: auto;
   border: 3px solid #ff0080;
   box-shadow: 0 0 20px #ff0080;
@@ -82,11 +129,36 @@ p {
   line-height: 1.6;
 }
 
-/* Event Section Styling */
-#events p {
-  color: #ff4da6;
-  font-size: 1.2em;
+/* About the Exhibition Section */
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Space between text and image */
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+  padding: 40px 20px; /* Adds padding around the section */
+  margin: 0 auto; /* Center the content */
+  max-width: 1200px; /* Ensures the section has the same width as the container */
 }
+
+.about-text, .about-image {
+  flex: 1; /* Text and image take equal space */
+  padding: 20px; /* Add padding to avoid content touching the edges */
+}
+
+.about-text p {
+  font-size: 1.1em; /* Ensures readability */
+  line-height: 1.6;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border: 0px solid #ff0080;
+  box-shadow: 0 0 40px #ff0080;
+  object-fit: cover; /* Ensures the image maintains aspect ratio */
+}
+
 
 /* Footer Styling */
 footer {
@@ -98,4 +170,10 @@ footer {
 footer p {
   font-size: 1em;
   color: #ff0080;
+}
+.navbar ul li a:hover {
+  color: #ff0080;
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.7), 0 0 25px rgba(255, 0, 128, 0.4);
+  background-color: rgba(255, 5, 197, 0.2);
+  border-radius: 5px;
 }
