@@ -22,6 +22,19 @@ body {
 }
 
 /* Header with Background Image */
+@keyframes moveBackground {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: top;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+/* Header with Background Image */
 header {
   background-color: #2b244f;
   padding: 120px 0;
@@ -31,7 +44,9 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  animation: moveBackground 15s infinite alternate ease-in-out; /* Background animation */
 }
+
 
 /* Optional: Add overlay effect */
 header::before {
@@ -107,7 +122,7 @@ header h1 {
 }
 
 #poster img {
-  max-width: 25%;
+  max-width: 10%;
   height: auto;
   border: 3px solid #ff0080;
   box-shadow: 0 0 20px #ff0080;
@@ -176,4 +191,113 @@ footer p {
   box-shadow: 0 0 15px rgba(255, 0, 128, 0.7), 0 0 25px rgba(255, 0, 128, 0.4);
   background-color: rgba(255, 5, 197, 0.2);
   border-radius: 5px;
+}
+
+
+/* Projects page with filter cards*/
+
+.filter-buttons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button{
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #ffecfa;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba( 0,0,0,0.05);
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+#mainPageButton{
+  margin-top:50px;
+}
+
+button.active{
+  background: #ff0080;
+  color:#ffffff;
+}
+
+.filterable-cards{
+  display:flex;
+  margin-top: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card{
+  background-color: #ff81c6;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.filterable-cards .card{
+  width: 22rem;
+}
+
+.card.hide{
+  display:none;
+}
+
+.card .img{
+  width:10px;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-body{
+  padding: 15px 20px 20px;
+}
+
+.card-title{
+  font-size: 20px;
+  font-weight: 500;
+  color:#333;
+}
+
+.card-text{
+  font-size: 18px;
+  color:#333;
+}
+
+
+/* ~~~~~~~~~~~~ Media queries ~~~~~~~~~~~~~~~~~*/
+
+@media ((max-width:650px) and (min-width:370px)) {
+  header{
+    width: 160vw;
+  }
+
+  .navbar-container{
+    width: 160vw;
+  }
+
+ section{
+  width:160vw;
+ }
+
+ footer{
+  width:160vw;
+ }
+}
+
+@media (max-width:369px){
+  header{
+    width: 180vw;
+  }
+
+  .navbar-container{
+    width: 180vw;
+  }
+  section{
+    width:180vw;
+   }
+  
+   footer{
+    width:180vw;
+   }
 }
