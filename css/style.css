@@ -373,3 +373,56 @@ button.active {
     width: 180vw;
   }
 }
+
+/* Coming Soon Section */
+#coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #2d2d60;
+  color: #ffffff;
+}
+
+#coming-soon .content {
+  max-width: 600px;
+}
+
+#coming-soon h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #ff79c6;
+}
+
+#coming-soon h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #8be9fd;
+}
+
+#coming-soon p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#countdown div {
+  text-align: center;
+}
+
+#countdown span {
+  font-size: 2.5em;
+  display: block;
+  color: #ff79c6;
+}
+
+#countdown small {
+  font-size: 0.8em;
+  color: #bd93f9;
+}
