@@ -31,15 +31,21 @@ body {
   line-height: 1.6;
 }
 
-h2 {
-  font-size: 2em;
+h1,
+h2,
+h3 {
+  /* font-size: 2em; */
   color: #ffffff;
   margin-bottom: 20px;
+  font-family: "Fascinate Inline", system-ui;
+  /* font-size: 32px; */
+  letter-spacing: 2px;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.6;
+  font-family: "Unica One", serif;
 }
 
 /* -------------- Footer Styling -------------- */
@@ -102,7 +108,9 @@ header h1 {
 
 /* -------------- Navbar Styling -------------- */
 .navbar-container {
-  background-color: rgba(175, 2, 255, 0.7);
+  /* background-color: rgba(175, 2, 255, 0.7); */
+  background-color: #2b244f;
+
   padding: 15px 0;
   position: sticky;
   top: 0;
@@ -113,6 +121,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: abosulte; /* or absolute */
 }
 
 .navbar ul {
@@ -131,6 +140,7 @@ header h1 {
   font-size: 1.1rem;
   padding: 10px 25px;
   transition: all 0.5s ease;
+  font-family: "Unica One", serif;
 }
 
 .nav-button {
@@ -142,7 +152,6 @@ header h1 {
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-  font-family: "Press Start 2P", sans-serif;
   cursor: pointer;
   box-shadow: 4px 4px 0px #000;
 }
@@ -233,6 +242,8 @@ header h1 {
   padding: 10px;
   font-size: 1.1em;
   line-height: 1.6;
+  font-family: "Unica One", serif;
+
   /* border-radius: 12px; Adds rounded corners */
 }
 
@@ -273,7 +284,9 @@ header h1 {
 #coming-soon {
   text-align: center;
   padding: 40px;
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
+  background-color: #e7e2e5;
+
   border-radius: 8px;
   margin-top: 20px;
   box-shadow: 4px 4px 0px #000;
@@ -314,6 +327,7 @@ header h1 {
   font-size: 1.2em;
   min-width: 80px;
   box-shadow: 4px 4px 0px #000;
+  font-family: "Unica One", serif;
 }
 
 #countdown div span {
@@ -391,11 +405,12 @@ header h1 {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 button {
   padding: 10px 20px;
+  font-family: "Unica One", serif;
   font-size: 18px;
   background: #ffecfa;
   border: none;
@@ -417,9 +432,9 @@ button:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-#mainPageButton {
+/* #mainPageButton {
   margin-top: 50px;
-}
+} */
 
 /* -------------- Project Grid Image Gallery -------------- */
 
@@ -482,6 +497,7 @@ button:hover {
   font-size: 1.5em;
   font-weight: bold;
   color: #ff0080;
+  font-family: "Fascinate Inline", system-ui;
 }
 
 .card.hide {
@@ -501,13 +517,14 @@ button:hover {
 .artwork-detail h2 {
   font-size: 3em;
   margin-bottom: 10px;
-  font-style: italic;
+  font-family: "Ribeye Marrow", serif;
 }
 
+/* 
 .artwork-detail h4 {
   font-size: 1.5em;
   margin-bottom: 40px;
-}
+} */
 
 /* -------------- Project Gallery Styling -------------- */
 .project-gallery {
@@ -537,19 +554,23 @@ button:hover {
 
 /* -------------- Profile Section -------------- */
 .student-profile {
-  text-align: center;
-  margin-bottom: 30px;
+  display: flex; /* Use flexbox to position the profile image and bio/contact table next to each other */
+  justify-content: flex-start; /* Align the items to the left */
+  gap: 30px; /* Space between the profile image and bio/contact table */
+  padding: 40px 20px;
   color: #ffffff;
 }
 
+/* Profile Container */
 .profile-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 30px;
-  padding: 40px 20px;
+  display: flex;
+  flex-direction: column; /* Stack profile image and name vertically */
+  align-items: center;
+  gap: 15px;
+  flex: 1; /* Allow profile image container to take up remaining space */
 }
 
+/* Profile Image Styling */
 .profile-image-container {
   text-align: center;
 }
@@ -568,28 +589,64 @@ button:hover {
   box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
 }
 
-/* -------------- Bio Section -------------- */
-
-.bio-contact-titles {
-  display: grid;
-  grid-template-rows: auto auto;
+/* -------------- Bio & Contact Section -------------- */
+.bio-contact-container {
+  display: flex; /* Align bio-contact table next to profile */
+  flex-direction: column; /* Stack table rows vertically */
+  flex: 2; /* Allow the bio/contact container to take up more space */
 }
 
+/* Table Styles */
+.bio-contact-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: "Ribeye Marrow", serif;
+  table-layout: auto; /* Allow the table to adjust column widths */
+}
+
+/* Title Column Styling */
+.bio-contact-table td.bio-title,
+.bio-contact-table td.contact-title {
+  width: 10%; /* Make title column narrower */
+  padding: 10px 15px;
+  font-weight: bold;
+  vertical-align: top;
+  /* box-shadow: 4px 4px 0px #000; */
+}
+
+/* Details Column Styling */
+.bio-contact-table td.bio-detail,
+.bio-contact-table td.contact-detail {
+  padding: 10px 15px;
+  /* box-shadow: 4px 4px 0px #000; */
+  font-family: "Unica One", serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: left;
+  display: flex;
+  width: 100%; /* Increase width of the details column to take more space */
+}
+
+/* Title Column Styling  */
 .bio-title,
 .contact-title {
-  text-align: left;
-  padding: 10px 0;
+  font-weight: bold;
 }
 
+/* Details Column */
 .bio-contact-details {
-  display: grid;
-  grid-template-rows: auto auto;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .bio-detail,
 .contact-detail {
-  padding: 10px 0;
+  padding: 10px;
+  font-family: "Unica One", serif;
+  /* box-shadow: 4px 4px 0px #000; */
 }
 
 .bio-contact-details p {
@@ -607,9 +664,10 @@ button:hover {
   text-decoration: none;
   font-size: 1.2em;
   border-radius: 8px;
-  box-shadow: 4px 4px 0px #000;
   transition: all 0.3s ease;
   margin-top: 20px;
+  box-shadow: 4px 4px 0px #000;
+  font-family: "Unica One", serif;
 }
 
 .portfolio-button:hover {
